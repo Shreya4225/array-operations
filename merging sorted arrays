@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+void merge(int arr1[],int n1,int arr2[],int n2,int arr3[]){
+    int i=0;
+    int j=0;
+    int k=0;
+    while(i<n1 && j<n2){
+        if(arr1[i]<arr2[j]){
+            arr3[k]=arr1[i];
+            i++;
+            k++;
+        }
+        else{
+            arr3[k++]=arr2[j++];  // [k++] is same as k++ in the previous one
+        }
+    }
+    //to copy the remaining elements into 3rd arr
+        while(i<n1){
+            arr3[k++]=arr1[i++];
+        }
+        while(j<n2){
+            arr3[k++]=arr2[j++];
+        }
+    }
+
+void printarray(int arr[],int n){
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
+ int main(){
+      int A[5]={1,3,5,7,11};
+      int B[4]={2,4,6,8};
+      int C[9]={};
+      merge(A,5,B,4,C);
+      printarray(C,9);
+      }
+ 
