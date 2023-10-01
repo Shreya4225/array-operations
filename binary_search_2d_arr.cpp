@@ -1,3 +1,5 @@
+//sorted in rowwise manner
+//linear array mai sab sorted way madhe asle tevhan
 class Solution {
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
